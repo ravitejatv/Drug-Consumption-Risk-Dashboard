@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - Drug Consumption</title>
+    <link href="../static/css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="../static/lib/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="sb-nav-fixed" style="background-color:grey;">
+    <!-- overflow: hidden; -->
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Drug Consumption Risk Dashboard</a>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <div class="col-xl-3sp">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table mr-1"></i> Scatter Plot Matrix
+                                <select style="margin-left:10%;" id="scatselect"></select>
+                            </div>
+                            <div class="card-body">
+                                <svg class="scattersvg" viewBox="0 0 380 760"></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card mb-4_sp">
+                                <div class="card-body1">
+                                    <div class="images">
+                                        <div class="imgContainer" style="margin-left:5%;">
+                                            <img src="../static/img/agreeableness.png" style="height:125px;width:125px" />
+                                        </div>
+                                        <div class="imgContainer" style="margin-left:5%;">
+                                            <img src="../static/img/conscience.png" style="height:120px;width:150px" />
+                                        </div>
+                                        <div class="imgContainer" style="margin-left:5%;">
+                                            <img src="../static/img/extraversion.png" style="height:110px;width:125px" />
+                                        </div>
+                                        <div class="imgContainer" style="margin-left:5%;">
+                                            <img src="../static/img/neuroticism.png" style="height:125px;width:125px" />
+                                        </div>
+                                        <div class="imgContainer" style="margin-left:5%;">
+                                            <img src="../static/img/openness.png" style="height:125px;width:125px" />
+                                        </div>
+                                        <div class="imgContainer" style="margin-left:10%;">
+                                            <svg class="earthsvg" height="125" width="150"></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-table mr-1"></i> Parallel Cordinates Plot
+                                    <!-- <img src="../static/img/upload.png" style="margin-left:70%;" height="30" width="30" onclick="pcpUplaodData()" /> -->
+                                    <img src="../static/img/update.png" style="margin-left:76%" height="22" width="22" onclick="pcpUpdateData()" />
+                                </div>
+
+                                <div class="card-body">
+                                    <svg class="pcpsvg" viewBox="0 0 1300 300"></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-area mr-1"></i>MDS Plot
+                                </div>
+                                <div class="card-body">
+                                    <svg class="mdssvg" viewBox="0 0 470 180"></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar mr-1"></i>Bar/Histogram Chart Plot
+                                    <select style="margin-left:30%;" id="barhistselect"></select>
+                                </div>
+                                <div class="card-body">
+
+                                    <svg class="barhistsvg" viewBox="0 0 680 180"></svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </main>
+    </div>
+    </div>
+
+    <script src="../static/js/index.js"></script>
+    <script src="../static/js/barplot.js"></script>
+    <script src="../static/js/histogram.js"></script>
+    <script src="../static/js/scattermatrix.js"></script>
+    <script src="../static/js/mdsplot.js"></script>
+    <script src="../static/js/pcp.js"></script>
+    <script src="../static/js/earth.js"></script>
+</body>
+
+</html>
